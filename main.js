@@ -1,27 +1,27 @@
 window.onload = function (){
-	var elements = document.getElementsByTagName("button");
-	var screen = document.querySelectorAll(' p')[0];
-	var clear =   document.getElementsByClassName('clear')[0];
+	let button = document.getElementsByTagName("button");
+	let display = document.querySelectorAll(' p')[0];
+	let clear =   document.getElementsByClassName('clear')[0];
 	
-	for(var i=0;i<elements.length;i+=1){
-		  if(elements[i].innerHTML === '='){
-			    elements[i].addEventListener("click", calculate(i));
+	for(var i=0; i<button.length; i+=1){
+		  if(button[i].innerHTML === '='){
+            button[i].addEventListener("click", calculate(i));
 		  }else{
-			   elements[i].addEventListener("click", addtocurrentvalue(i));
+			   button[i].addEventListener("click", operations(i));
 		  }
 	}
 	
 
 	
 	
-	function addtocurrentvalue (i){
+	function operations (i){
 		return function(){
-			if (elements[i].innerHTML === "÷") {
-               screen.innerHTML  +=  "/ " ;
-      }else if(elements[i].innerHTML === "x"){
-			      screen.innerHTML += "*";
+			if (button[i].innerHTML === "÷") {
+               display.innerHTML  +=  "/ " ;
+      }else if(button[i].innerHTML === "x"){
+			      display.innerHTML += "*";
 		   } else{
-			   screen.innerHTML  += elements[i].innerHTML;
+			   display.innerHTML  += button[i].innerHTML;
 		   }
 	  };
    }
@@ -29,12 +29,12 @@ window.onload = function (){
 
 
    clear.onclick = function () {
-    screen.innerHTML = '';
+    display.innerHTML = '';
   }; 
 
  function calculate(i) {
     return function () {
-        screen.innerHTML = eval(screen.innerHTML);
+        display.innerHTML = eval(display.innerHTML);
     };
   }
 };

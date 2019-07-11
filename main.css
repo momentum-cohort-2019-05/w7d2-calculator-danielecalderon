@@ -1,0 +1,25 @@
+.display{
+  font-size: 50px;
+  list-style:none;
+	color:blue;
+	height:100px;
+	width:200px;
+  border-radius:4px;
+  background:#828A9B;
+   border-top:4px solid #ED586C;
+  overflow:hidden;
+}
+
+
+.master-div{
+  width:290px;
+  margin:0 auto;
+  background:#3F475B;
+  height:310px;
+  box-shadow:2px 2px 2px gray;
+  padding:15px;
+  border-bottom:5px solid #ED586C;
+    border-radius:4px;	
+position:relative;	 
+}
+
